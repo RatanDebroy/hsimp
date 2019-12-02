@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: passwd 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: passwd 
+    spec:
+      containers:
+        - name: passwd 
+          image: hsimpacr.azurecr.io/passwd
+          ports:
+          - containerPort: 80
